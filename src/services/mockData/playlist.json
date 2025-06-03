@@ -1,0 +1,112 @@
+[
+  {
+    "id": "1",
+    "name": "Midnight Chill",
+    "description": "Perfect vibes for late night coding sessions",
+    "userId": "user1",
+    "tracks": ["track1", "track3", "track7", "track11"],
+    "isPublic": true,
+    "coverImage": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop",
+    "createdAt": "2024-01-15T22:30:00.000Z",
+    "updatedAt": "2024-01-20T14:15:00.000Z"
+  },
+  {
+    "id": "2",
+    "name": "Electronic Dreams",
+    "description": "High-energy electronic beats to fuel your workout",
+    "userId": "user1",
+    "tracks": ["track2", "track5", "track9", "track13"],
+    "isPublic": true,
+    "coverImage": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop",
+    "createdAt": "2024-01-18T10:45:00.000Z",
+    "updatedAt": "2024-01-22T16:30:00.000Z"
+  },
+  {
+    "id": "3",
+    "name": "Jazz & Soul",
+    "description": "Classic jazz and soulful melodies for relaxation",
+    "userId": "user2",
+    "tracks": ["track4", "track6", "track10"],
+    "isPublic": false,
+    "coverImage": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=300&h=300&fit=crop",
+    "createdAt": "2024-01-12T08:20:00.000Z",
+    "updatedAt": "2024-01-19T11:45:00.000Z"
+  },
+  {
+    "id": "4",
+    "name": "Road Trip Anthems",
+    "description": "Epic songs for your next adventure",
+    "userId": "user1",
+    "tracks": ["track8", "track12", "track14", "track15", "track1"],
+    "isPublic": true,
+    "coverImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop",
+    "createdAt": "2024-01-21T13:10:00.000Z",
+    "updatedAt": "2024-01-23T09:25:00.000Z"
+  },
+  {
+    "id": "5",
+    "name": "Focus Flow",
+    "description": "Instrumental tracks for deep work and concentration",
+    "userId": "user3",
+    "tracks": ["track3", "track7", "track11"],
+    "isPublic": true,
+    "coverImage": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=300&h=300&fit=crop",
+    "createdAt": "2024-01-14T16:00:00.000Z",
+    "updatedAt": "2024-01-21T12:30:00.000Z"
+  },
+  {
+    "id": "6",
+    "name": "Party Starters",
+    "description": "High-energy tracks to get the party going",
+    "userId": "user2",
+    "tracks": ["track2", "track5", "track9", "track13", "track15"],
+    "isPublic": true,
+    "coverImage": "https://images.unsplash.com/photo-1574263867128-ab5bfa406b41?w=300&h=300&fit=crop",
+    "createdAt": "2024-01-25T19:45:00.000Z",
+    "updatedAt": "2024-01-26T21:15:00.000Z"
+  },
+  {
+    "id": "7",
+    "name": "Acoustic Sessions",
+    "description": "Raw and beautiful acoustic performances",
+    "userId": "user4",
+    "tracks": ["track4", "track8", "track12"],
+    "isPublic": false,
+    "coverImage": "https://images.unsplash.com/photo-1520472354273-44dd9b12bc89?w=300&h=300&fit=crop",
+    "createdAt": "2024-01-17T14:20:00.000Z",
+    "updatedAt": "2024-01-24T10:50:00.000Z"
+  },
+  {
+    "id": "8",
+    "name": "Morning Motivation",
+    "description": "Energizing tracks to start your day right",
+    "userId": "user1",
+    "tracks": ["track1", "track6", "track10", "track14"],
+    "isPublic": true,
+    "coverImage": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=300&h=300&fit=crop",
+    "createdAt": "2024-01-13T07:30:00.000Z",
+    "updatedAt": "2024-01-20T08:45:00.000Z"
+  },
+  {
+    "id": "9",
+    "name": "Throwback Thursday",
+    "description": "Classic hits from the 80s and 90s",
+    "userId": "user3",
+    "tracks": ["track7", "track11", "track15"],
+    "isPublic": true,
+    "coverImage": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop",
+    "createdAt": "2024-01-11T20:15:00.000Z",
+    "updatedAt": "2024-01-18T15:30:00.000Z"
+  },
+  {
+    "id": "10",
+    "name": "Study Vibes",
+    "description": "Calm and peaceful music for studying",
+    "userId": "user4",
+    "tracks": ["track3", "track4", "track6", "track8"],
+    "isPublic": false,
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
+    "createdAt": "2024-01-16T11:00:00.000Z",
+    "updatedAt": "2024-01-22T13:20:00.000Z"
+  }
+]

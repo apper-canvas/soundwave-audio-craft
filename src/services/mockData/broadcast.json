@@ -1,0 +1,102 @@
+[
+  {
+    "id": "broadcast1",
+    "title": "Electronic Vibes Live Session",
+    "broadcasterId": "user2",
+    "isLive": true,
+    "startTime": "2024-01-26T20:30:00.000Z",
+    "listeners": 2840,
+    "category": "Electronic",
+    "description": "High-energy electronic beats and latest synthwave tracks"
+  },
+  {
+    "id": "broadcast2",
+    "title": "Midnight Jazz & Blues",
+    "broadcasterId": "user4",
+    "isLive": true,
+    "startTime": "2024-01-26T23:00:00.000Z",
+    "listeners": 1520,
+    "category": "Jazz",
+    "description": "Smooth jazz and blues for late night relaxation"
+  },
+  {
+    "id": "broadcast3",
+    "title": "Techno Underground",
+    "broadcasterId": "user5",
+    "isLive": false,
+    "startTime": "2024-01-26T18:00:00.000Z",
+    "listeners": 0,
+    "category": "Techno",
+    "description": "Deep underground techno beats and industrial sounds"
+  },
+  {
+    "id": "broadcast4",
+    "title": "Chill Beats Study Session",
+    "broadcasterId": "user8",
+    "isLive": true,
+    "startTime": "2024-01-26T21:45:00.000Z",
+    "listeners": 890,
+    "category": "Lo-Fi",
+    "description": "Perfect background music for studying and working"
+  },
+  {
+    "id": "broadcast5",
+    "title": "Retro Wave Friday",
+    "broadcasterId": "user10",
+    "isLive": false,
+    "startTime": "2024-01-25T19:30:00.000Z",
+    "listeners": 0,
+    "category": "Synthwave",
+    "description": "80s inspired synthwave and retro electronic music"
+  },
+  {
+    "id": "broadcast6",
+    "title": "Morning Motivation Mix",
+    "broadcasterId": "user2",
+    "isLive": false,
+    "startTime": "2024-01-26T08:00:00.000Z",
+    "listeners": 0,
+    "category": "Uplifting",
+    "description": "Energizing tracks to start your day with positive vibes"
+  },
+  {
+    "id": "broadcast7",
+    "title": "Ambient Soundscapes",
+    "broadcasterId": "user4",
+    "isLive": true,
+    "startTime": "2024-01-26T22:15:00.000Z",
+    "listeners": 650,
+    "category": "Ambient",
+    "description": "Atmospheric sounds and ambient textures for meditation"
+  },
+  {
+    "id": "broadcast8",
+    "title": "House Party Weekend",
+    "broadcasterId": "user5",
+    "isLive": false,
+    "startTime": "2024-01-26T16:00:00.000Z",
+    "listeners": 0,
+    "category": "House",
+    "description": "High-energy house music to get the party started"
+  },
+  {
+    "id": "broadcast9",
+    "title": "Indie Discoveries",
+    "broadcasterId": "user8",
+    "isLive": false,
+    "startTime": "2024-01-25T14:30:00.000Z",
+    "listeners": 0,
+    "category": "Indie",
+    "description": "Discovering new indie artists and underground tracks"
+  },
+  {
+    "id": "broadcast10",
+    "title": "Late Night Deep House",
+    "broadcasterId": "user10",
+    "isLive": true,
+    "startTime": "2024-01-27T01:00:00.000Z",
+    "listeners": 1240,
+    "category": "Deep House",
+    "description": "Deep, groovy house music for late night listening"
+  }
+]

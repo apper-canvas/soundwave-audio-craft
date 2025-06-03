@@ -1,0 +1,152 @@
+[
+  {
+    "id": "track1",
+    "title": "Neon Nights",
+    "artist": "Synthwave Dreams",
+    "duration": 245,
+    "audioUrl": "https://example.com/audio/neon-nights.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop",
+    "genre": "Electronic",
+    "playCount": 15420
+  },
+  {
+    "id": "track2",
+    "title": "Electric Pulse",
+    "artist": "DJ Voltage",
+    "duration": 198,
+    "audioUrl": "https://example.com/audio/electric-pulse.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1574263867128-ab5bfa406b41?w=300&h=300&fit=crop",
+    "genre": "Electronic",
+    "playCount": 28350
+  },
+  {
+    "id": "track3",
+    "title": "Quiet Storm",
+    "artist": "Ambient Collective",
+    "duration": 320,
+    "audioUrl": "https://example.com/audio/quiet-storm.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=300&h=300&fit=crop",
+    "genre": "Ambient",
+    "playCount": 8750
+  },
+  {
+    "id": "track4",
+    "title": "Blue Moon",
+    "artist": "Sarah Jazz",
+    "duration": 275,
+    "audioUrl": "https://example.com/audio/blue-moon.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=300&h=300&fit=crop",
+    "genre": "Jazz",
+    "playCount": 12890
+  },
+  {
+    "id": "track5",
+    "title": "Bass Drop Symphony",
+    "artist": "Heavy Beats",
+    "duration": 203,
+    "audioUrl": "https://example.com/audio/bass-drop-symphony.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop",
+    "genre": "Dubstep",
+    "playCount": 35670
+  },
+  {
+    "id": "track6",
+    "title": "Morning Coffee",
+    "artist": "Chill Vibes",
+    "duration": 180,
+    "audioUrl": "https://example.com/audio/morning-coffee.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=300&h=300&fit=crop",
+    "genre": "Lo-Fi",
+    "playCount": 22140
+  },
+  {
+    "id": "track7",
+    "title": "Midnight Drive",
+    "artist": "Retro Wave",
+    "duration": 267,
+    "audioUrl": "https://example.com/audio/midnight-drive.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop",
+    "genre": "Synthwave",
+    "playCount": 18920
+  },
+  {
+    "id": "track8",
+    "title": "Acoustic Dreams",
+    "artist": "Folk Stories",
+    "duration": 234,
+    "audioUrl": "https://example.com/audio/acoustic-dreams.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1520472354273-44dd9b12bc89?w=300&h=300&fit=crop",
+    "genre": "Folk",
+    "playCount": 9680
+  },
+  {
+    "id": "track9",
+    "title": "Rave Machine",
+    "artist": "Techno Masters",
+    "duration": 189,
+    "audioUrl": "https://example.com/audio/rave-machine.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1574263867128-ab5bfa406b41?w=300&h=300&fit=crop",
+    "genre": "Techno",
+    "playCount": 41230
+  },
+  {
+    "id": "track10",
+    "title": "Smooth Operator",
+    "artist": "Jazz Fusion",
+    "duration": 298,
+    "audioUrl": "https://example.com/audio/smooth-operator.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=300&h=300&fit=crop",
+    "genre": "Jazz",
+    "playCount": 14560
+  },
+  {
+    "id": "track11",
+    "title": "Forest Meditation",
+    "artist": "Nature Sounds",
+    "duration": 420,
+    "audioUrl": "https://example.com/audio/forest-meditation.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300&h=300&fit=crop",
+    "genre": "Ambient",
+    "playCount": 7890
+  },
+  {
+    "id": "track12",
+    "title": "Road Trip",
+    "artist": "Indie Travelers",
+    "duration": 215,
+    "audioUrl": "https://example.com/audio/road-trip.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop",
+    "genre": "Indie",
+    "playCount": 16780
+  },
+  {
+    "id": "track13",
+    "title": "Digital Warfare",
+    "artist": "Cyber Punk",
+    "duration": 178,
+    "audioUrl": "https://example.com/audio/digital-warfare.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop",
+    "genre": "Electronic",
+    "playCount": 29450
+  },
+  {
+    "id": "track14",
+    "title": "Sunrise Anthem",
+    "artist": "Epic Sounds",
+    "duration": 312,
+    "audioUrl": "https://example.com/audio/sunrise-anthem.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=300&h=300&fit=crop",
+    "genre": "Uplifting",
+    "playCount": 33210
+  },
+  {
+    "id": "track15",
+    "title": "Party Tonight",
+    "artist": "Dance Floor Kings",
+    "duration": 195,
+    "audioUrl": "https://example.com/audio/party-tonight.mp3",
+    "coverArt": "https://images.unsplash.com/photo-1574263867128-ab5bfa406b41?w=300&h=300&fit=crop",
+    "genre": "Dance",
+    "playCount": 52680
+  }
+]

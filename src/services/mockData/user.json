@@ -1,0 +1,93 @@
+[
+  {
+    "id": "user1",
+    "username": "musiclover92",
+    "email": "sarah@example.com",
+    "profileImage": "https://images.unsplash.com/photo-1494790108755-2616b612b176?w=150&h=150&fit=crop",
+    "accountType": "listener",
+    "followers": 1240,
+    "following": ["user2", "user3", "user5"]
+  },
+  {
+    "id": "user2",
+    "username": "dj_nexus",
+    "email": "alex@example.com",
+    "profileImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
+    "accountType": "broadcaster",
+    "followers": 15670,
+    "following": ["user1", "user4", "user6", "user7"]
+  },
+  {
+    "id": "user3",
+    "username": "chillbeats",
+    "email": "mike@example.com",
+    "profileImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+    "accountType": "listener",
+    "followers": 890,
+    "following": ["user1", "user2", "user8"]
+  },
+  {
+    "id": "user4",
+    "username": "sarah_blues",
+    "email": "sarah.blues@example.com",
+    "profileImage": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+    "accountType": "broadcaster",
+    "followers": 8920,
+    "following": ["user2", "user5", "user9"]
+  },
+  {
+    "id": "user5",
+    "username": "techno_master",
+    "email": "carlos@example.com",
+    "profileImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
+    "accountType": "broadcaster",
+    "followers": 22340,
+    "following": ["user1", "user2", "user4", "user6"]
+  },
+  {
+    "id": "user6",
+    "username": "ambient_soul",
+    "email": "maya@example.com",
+    "profileImage": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop",
+    "accountType": "listener",
+    "followers": 2150,
+    "following": ["user2", "user4", "user5", "user7", "user10"]
+  },
+  {
+    "id": "user7",
+    "username": "vinyl_collector",
+    "email": "david@example.com",
+    "profileImage": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop",
+    "accountType": "listener",
+    "followers": 1680,
+    "following": ["user1", "user3", "user8", "user9"]
+  },
+  {
+    "id": "user8",
+    "username": "beat_producer",
+    "email": "jordan@example.com",
+    "profileImage": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&h=150&fit=crop",
+    "accountType": "broadcaster",
+    "followers": 11450,
+    "following": ["user2", "user4", "user5", "user10"]
+    
+  },
+  {
+    "id": "user9",
+    "username": "indie_explorer",
+    "email": "emma@example.com",
+    "profileImage": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop",
+    "accountType": "listener",
+    "followers": 3420,
+    "following": ["user1", "user4", "user6", "user7", "user8"]
+  },
+  {
+    "id": "user10",
+    "username": "electronic_vibes",
+    "email": "ryan@example.com",
+    "profileImage": "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=150&h=150&fit=crop",
+    "accountType": "broadcaster",
+    "followers": 18760,
+    "following": ["user2", "user4", "user5", "user8"]
+  }
+]
