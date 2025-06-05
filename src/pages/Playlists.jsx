@@ -425,12 +425,12 @@ const handlePlayPlaylist = (playlist) => {
                   className="w-10 h-10 bg-surface-700 hover:bg-surface-600 rounded-xl flex items-center justify-center transition-colors"
                 >
                   <ApperIcon name="X" className="w-5 h-5" />
+<ApperIcon name="X" className="w-5 h-5" />
                 </button>
               </div>
 
-<div className="space-y-4">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-lg font-semibold">Tracks</h4>
                   <button
                     onClick={() => setShowTrackBrowser(!showTrackBrowser)}
                     className="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-medium transition-colors"
