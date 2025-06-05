@@ -87,9 +87,9 @@ const [selectedPlaylist, setSelectedPlaylist] = useState(null)
     }
   }
 
-  const handleDeletePlaylist = async (playlistId) => {
+const handleDeletePlaylist = async (playlistId) => {
     try {
-      await playlistService.delete(playlistId)
+      await playlistService.delete_(playlistId)
       setPlaylists(prev => prev.filter(p => p.id !== playlistId))
       if (selectedPlaylist?.id === playlistId) {
         setSelectedPlaylist(null)
