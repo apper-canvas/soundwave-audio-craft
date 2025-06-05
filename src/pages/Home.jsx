@@ -83,11 +83,10 @@ const navItems = [
             )}
           </div>
         </div>
-
-        {/* Navigation Items */}
-<nav className="flex-1 p-4">
+{/* Navigation Items */}
+        <nav className="flex-1 p-4">
           <ul className="space-y-2">
-{navItems.map((item) => (
+            {navItems.map((item) => (
               <li key={item.name}>
                 <button 
                   onClick={() => handleNavClick(item.path)}
@@ -97,7 +96,7 @@ const navItems = [
                       : 'text-surface-300 hover:text-white hover:bg-surface-700'
                   }`}
                 >
-                  <ApperIcon name={item.icon} className="w-5 h-5 flex-shrink-0" />
+                  <ApperIcon name={item.icon} className="w-5 h-5" />
                   {!isNavCollapsed && (
                     <span className="font-medium">{item.name}</span>
                   )}
@@ -105,7 +104,6 @@ const navItems = [
               </li>
             ))}
           </ul>
-        </nav>
 
         {/* Toggle Button */}
         <div className="p-4 border-t border-surface-700">
