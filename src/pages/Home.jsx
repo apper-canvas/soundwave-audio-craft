@@ -10,13 +10,23 @@ const Home = () => {
     setIsNavCollapsed(!isNavCollapsed)
   }
 
-  const navItems = [
-    { name: 'Home', icon: 'Home', active: true },
-    { name: 'Browse', icon: 'Compass' },
-    { name: 'Library', icon: 'Library' },
-    { name: 'Live', icon: 'Radio' },
-    { name: 'Playlists', icon: 'ListMusic' }
+const navItems = [
+    { name: 'Home', icon: 'Home', path: '/', active: true },
+    { name: 'Browse', icon: 'Compass', path: '/browse' },
+    { name: 'Library', icon: 'Library', path: '/library' },
+    { name: 'Live', icon: 'Radio', path: '/live' },
+    { name: 'Playlists', icon: 'ListMusic', path: '/playlists' }
   ]
+
+  const handleNavClick = (path) => {
+    // Navigation logic can be implemented here
+    console.log('Navigating to:', path)
+  }
+
+  const getCurrentPath = () => {
+    // Simple path detection, can be replaced with React Router's useLocation
+    return window.location.pathname
+  }
 
   const featuredContent = [
     {
@@ -75,15 +85,18 @@ const Home = () => {
         </div>
 
         {/* Navigation Items */}
-        <nav className="flex-1 p-4">
+<nav className="flex-1 p-4">
           <ul className="space-y-2">
-            {navItems.map((item) => (
+{navItems.map((item) => (
               <li key={item.name}>
-                <button className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 ${
-                  item.active 
-                    ? 'bg-gradient-to-r from-primary/20 to-secondary/20 text-white border border-primary/30' 
-                    : 'text-surface-300 hover:text-white hover:bg-surface-700'
-                }`}>
+                <button 
+                  onClick={() => handleNavClick(item.path)}
+                  className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 ${
+                    getCurrentPath() === item.path
+                      ? 'bg-gradient-to-r from-primary/20 to-secondary/20 text-white border border-primary/30' 
+                      : 'text-surface-300 hover:text-white hover:bg-surface-700'
+                  }`}
+                >
                   <ApperIcon name={item.icon} className="w-5 h-5 flex-shrink-0" />
                   {!isNavCollapsed && (
                     <span className="font-medium">{item.name}</span>
