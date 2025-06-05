@@ -57,7 +57,35 @@ export const delete_ = async (id) => {
   
   playlists.splice(index, 1)
   return { success: true }
+return { success: true }
+}
+
+// Helper method for adding tracks to playlists with validation
+export const addTrackToPlaylist = async (playlistId, trackId) => {
+  await delay(250)
+  
+  const playlistIndex = playlists.findIndex(p => p.id === playlistId)
+  if (playlistIndex === -1) {
+    throw new Error('Playlist not found')
+  }
+  
+  const playlist = playlists[playlistIndex]
+  const currentTracks = playlist.tracks || []
+  
+  // Check if track is already in playlist
+  if (currentTracks.includes(trackId)) {
+    throw new Error('Track is already in this playlist')
+  }
+  
+  // Add track to playlist
+  const updatedTracks = [...currentTracks, trackId]
+  playlists[playlistIndex] = {
+    ...playlist,
+    tracks: updatedTracks,
+    updatedAt: new Date().toISOString()
+  }
+  
+  return { ...playlists[playlistIndex] }
 }
 
 // Note: Using delete_ instead of delete to avoid JavaScript reserved keyword
-export { delete_ as delete }
