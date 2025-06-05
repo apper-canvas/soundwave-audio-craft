@@ -55,11 +55,9 @@ export const delete_ = async (id) => {
     throw new Error('Playlist not found')
   }
   
-  playlists.splice(index, 1)
+playlists.splice(index, 1)
   return { success: true }
-return { success: true }
 }
-
 // Helper method for adding tracks to playlists with validation
 export const addTrackToPlaylist = async (playlistId, trackId) => {
   await delay(250)
