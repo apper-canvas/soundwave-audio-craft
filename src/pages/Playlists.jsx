@@ -12,8 +12,10 @@ const Playlists = () => {
   const [tracks, setTracks] = useState([])
   const [loading, setLoading] = useState(false)
   const [showCreateForm, setShowCreateForm] = useState(false)
-  const [selectedPlaylist, setSelectedPlaylist] = useState(null)
+const [selectedPlaylist, setSelectedPlaylist] = useState(null)
   const [searchQuery, setSearchQuery] = useState('')
+  const [showTrackBrowser, setShowTrackBrowser] = useState(false)
+  const [trackSearchQuery, setTrackSearchQuery] = useState('')
   const [newPlaylist, setNewPlaylist] = useState({
     name: '',
     description: '',
@@ -98,9 +100,10 @@ const Playlists = () => {
     }
   }
 
-  const handlePlayPlaylist = (playlist) => {
-    toast.success(`Playing playlist: ${playlist.name}`)
+const handlePlayPlaylist = (playlist) => {
     setSelectedPlaylist(playlist)
+    setShowTrackBrowser(false)
+    setTrackSearchQuery('')
   }
 
   const filteredPlaylists = playlists.filter(playlist => 
@@ -113,8 +116,60 @@ const Playlists = () => {
     return playlist.tracks.map(trackId => 
       tracks.find(track => track.id === trackId)
     ).filter(Boolean)
+}
+
+  const handleAddTrackToPlaylist = async (track) => {
+    if (!selectedPlaylist) return
+    
+    try {
+      const playlistTracks = selectedPlaylist.tracks || []
+      if (playlistTracks.includes(track.id)) {
+        toast.info('Track is already in this playlist')
+        return
+      }
+
+      const updatedTracks = [...playlistTracks, track.id]
+      const updatedPlaylist = await playlistService.update(selectedPlaylist.id, {
+        tracks: updatedTracks
+      })
+
+      setSelectedPlaylist(updatedPlaylist)
+      setPlaylists(prev => prev.map(p => 
+        p.id === selectedPlaylist.id ? updatedPlaylist : p
+      ))
+      
+      toast.success(`Added "${track.title}" to playlist`)
+    } catch (err) {
+      toast.error('Failed to add track to playlist')
+    }
   }
 
+  const handleRemoveTrackFromPlaylist = async (trackId) => {
+    if (!selectedPlaylist) return
+    
+    try {
+      const updatedTracks = (selectedPlaylist.tracks || []).filter(id => id !== trackId)
+      const updatedPlaylist = await playlistService.update(selectedPlaylist.id, {
+        tracks: updatedTracks
+      })
+
+      setSelectedPlaylist(updatedPlaylist)
+      setPlaylists(prev => prev.map(p => 
+        p.id === selectedPlaylist.id ? updatedPlaylist : p
+      ))
+      
+      toast.success('Track removed from playlist')
+    } catch (err) {
+      toast.error('Failed to remove track from playlist')
+    }
+  }
+
+  const getFilteredTracksForBrowser = () => {
+    return tracks.filter(track => 
+      track.title.toLowerCase().includes(trackSearchQuery.toLowerCase()) ||
+      track.artist.toLowerCase().includes(trackSearchQuery.toLowerCase())
+    )
+  }
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Sidebar Navigation */}
@@ -373,39 +428,131 @@ const Playlists = () => {
                 </button>
               </div>
 
-              <div className="space-y-2">
-                <h4 className="text-lg font-semibold mb-4">Tracks</h4>
-                {getPlaylistTracks(selectedPlaylist).map((track, index) => (
-                  <div
-                    key={track.id}
-                    className="flex items-center gap-4 p-3 bg-surface-700/50 rounded-xl hover:bg-surface-700 transition-colors"
+<div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-lg font-semibold">Tracks</h4>
+                  <button
+                    onClick={() => setShowTrackBrowser(!showTrackBrowser)}
+                    className="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-medium transition-colors"
                   >
-                    <span className="w-8 text-center text-surface-400 text-sm">{index + 1}</span>
-                    <img
-                      src={track.coverArt || `https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=50&h=50&fit=crop`}
-                      alt={track.title}
-                      className="w-10 h-10 rounded-lg object-cover"
-                    />
-                    <div className="flex-1 min-w-0">
-                      <p className="font-medium truncate">{track.title}</p>
-                      <p className="text-surface-300 text-sm truncate">{track.artist}</p>
+                    <ApperIcon name="Plus" className="w-4 h-4" />
+                    Add Tracks
+                  </button>
+                </div>
+
+                {/* Track Browser */}
+                <AnimatePresence>
+                  {showTrackBrowser && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="bg-surface-700/30 rounded-xl p-4 space-y-4"
+                    >
+                      <div className="flex items-center gap-4">
+                        <h5 className="font-medium">Browse Tracks to Add</h5>
+                        <div className="flex-1 relative">
+                          <ApperIcon name="Search" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-surface-400" />
+                          <input
+                            type="text"
+                            value={trackSearchQuery}
+                            onChange={(e) => setTrackSearchQuery(e.target.value)}
+                            placeholder="Search tracks..."
+                            className="w-full pl-10 pr-4 py-2 bg-surface-700 border border-surface-600 rounded-lg text-white placeholder-surface-400 focus:outline-none focus:border-primary transition-colors"
+                          />
+                        </div>
+                      </div>
+                      
+                      <div className="max-h-64 overflow-y-auto space-y-2">
+                        {getFilteredTracksForBrowser().map((track) => {
+                          const isInPlaylist = selectedPlaylist.tracks?.includes(track.id)
+                          return (
+                            <div
+                              key={track.id}
+                              className="flex items-center gap-3 p-3 bg-surface-700/50 rounded-lg hover:bg-surface-700 transition-colors"
+                            >
+                              <img
+                                src={track.coverArt || `https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=40&h=40&fit=crop`}
+                                alt={track.title}
+                                className="w-10 h-10 rounded-lg object-cover"
+                              />
+                              <div className="flex-1 min-w-0">
+                                <p className="font-medium truncate">{track.title}</p>
+                                <p className="text-surface-300 text-sm truncate">{track.artist}</p>
+                              </div>
+                              <span className="text-surface-400 text-sm">
+                                {Math.floor(track.duration / 60)}:{String(track.duration % 60).padStart(2, '0')}
+                              </span>
+                              <button
+                                onClick={() => handleAddTrackToPlaylist(track)}
+                                disabled={isInPlaylist}
+                                className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
+                                  isInPlaylist 
+                                    ? 'bg-surface-600 text-surface-400 cursor-not-allowed'
+                                    : 'bg-primary hover:bg-primary-dark text-white'
+                                }`}
+                              >
+                                {isInPlaylist ? 'Added' : 'Add'}
+                              </button>
+                            </div>
+                          )
+                        })}
+                        
+                        {getFilteredTracksForBrowser().length === 0 && (
+                          <div className="text-center py-6">
+                            <p className="text-surface-400">No tracks found</p>
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Playlist Tracks */}
+                <div className="space-y-2">
+                  {getPlaylistTracks(selectedPlaylist).map((track, index) => (
+                    <div
+                      key={track.id}
+                      className="flex items-center gap-4 p-3 bg-surface-700/50 rounded-xl hover:bg-surface-700 transition-colors group"
+                    >
+                      <span className="w-8 text-center text-surface-400 text-sm">{index + 1}</span>
+                      <img
+                        src={track.coverArt || `https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=50&h=50&fit=crop`}
+                        alt={track.title}
+                        className="w-10 h-10 rounded-lg object-cover"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium truncate">{track.title}</p>
+                        <p className="text-surface-300 text-sm truncate">{track.artist}</p>
+                      </div>
+                      <span className="text-surface-400 text-sm">
+                        {Math.floor(track.duration / 60)}:{String(track.duration % 60).padStart(2, '0')}
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => toast.success(`Playing: ${track.title}`)}
+                          className="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                        >
+                          <ApperIcon name="Play" className="w-4 h-4 text-white ml-0.5" />
+                        </button>
+                        <button
+                          onClick={() => handleRemoveTrackFromPlaylist(track.id)}
+                          className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform opacity-0 group-hover:opacity-100"
+                        >
+                          <ApperIcon name="X" className="w-4 h-4 text-white" />
+                        </button>
+                      </div>
                     </div>
-                    <span className="text-surface-400 text-sm">
-                      {Math.floor(track.duration / 60)}:{String(track.duration % 60).padStart(2, '0')}
-                    </span>
-                    <button className="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform">
-                      <ApperIcon name="Play" className="w-4 h-4 text-white ml-0.5" />
-                    </button>
-                  </div>
-                ))}
-                
-                {getPlaylistTracks(selectedPlaylist).length === 0 && (
-                  <div className="text-center py-8">
-                    <ApperIcon name="Music" className="w-12 h-12 text-surface-400 mx-auto mb-3" />
-                    <p className="text-surface-400">This playlist is empty</p>
-                    <p className="text-surface-500 text-sm">Add some tracks to get started</p>
-                  </div>
-                )}
+                  ))}
+                  
+                  {getPlaylistTracks(selectedPlaylist).length === 0 && (
+                    <div className="text-center py-8">
+                      <ApperIcon name="Music" className="w-12 h-12 text-surface-400 mx-auto mb-3" />
+                      <p className="text-surface-400">This playlist is empty</p>
+                      <p className="text-surface-500 text-sm">Click "Add Tracks" to add some music</p>
+                    </div>
+                  )}
+                </div>
               </div>
             </motion.div>
           )}
