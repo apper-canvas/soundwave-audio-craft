@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import MainFeature from '../components/MainFeature'
 import ApperIcon from '../components/ApperIcon'
 import { motion } from 'framer-motion'
 
 const Home = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const toggleNav = () => {
     setIsNavCollapsed(!isNavCollapsed)
@@ -19,13 +22,11 @@ const navItems = [
   ]
 
   const handleNavClick = (path) => {
-    // Navigation logic can be implemented here
-    console.log('Navigating to:', path)
+    navigate(path)
   }
 
   const getCurrentPath = () => {
-    // Simple path detection, can be replaced with React Router's useLocation
-    return window.location.pathname
+    return location.pathname
   }
 
   const featuredContent = [
@@ -104,7 +105,7 @@ const navItems = [
               </li>
             ))}
           </ul>
-
+        </nav>
         {/* Toggle Button */}
         <div className="p-4 border-t border-surface-700">
           <button
